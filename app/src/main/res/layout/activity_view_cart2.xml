@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:background="@color/navyvlue"
+        android:layout_height="220dp">
+
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_arrow_back_24"
+            android:drawableTint="@color/white"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:id="@+id/layout2"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/layout1"
+            android:layout_centerInParent="true"
+            android:background="@color/white"
+            android:elevation="3dp"
+            tools:ignore="NotSibling">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/totalcost"
+                android:layout_centerInParent="true"
+                android:textColor="@color/yellow"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/totalcost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text"
+                android:layout_centerInParent="true"
+                android:paddingBottom="8dp"
+                android:text="@string/price"
+                android:textColor="@color/navyvlue"
+                android:textSize="22sp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout1"
+        android:layout_marginBottom="50dp">
+
+        <TextView
+            android:id="@+id/maintittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/review_order"
+            android:padding="8dp"
+            android:textColor="@color/navyvlue"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/maintittle"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/SHOW_ALL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemlist"
+            android:layout_alignParentEnd="true"
+            android:padding="8dp"
+            android:text="@string/show"
+            android:textColor="@color/navyvlue"
+            android:textSize="16sp" />
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/navyvlue">
+
+        <TextView
+            android:id="@+id/viewcart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawableTint="@color/white"
+            android:text="@string/placeorder"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/viewcart"
+            android:padding="10dp"
+            android:id="@+id/itemcount"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</RelativeLayout>

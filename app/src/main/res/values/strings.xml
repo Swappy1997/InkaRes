@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Inka Restaurant</string>
+    <string name="timingmessage">5.0(200+) | All days 09:00 AM -06:00 PM</string>
+    <string name="contact">Reach us at :11111111111</string>
+    <string name="bookatable">Book a table</string>
+    <string name="viewcart">view cart</string>
+    <string name="items">items</string>
+    <string name="menu">MENU</string>
+    <string name="starter">Starter</string>
+    <string name="main_course">Main Course</string>
+    <string name="dessert">Dessert</string>
+    <string name="drinks">Drinks</string>
+    <string name="title_activity_view_cart">ViewCart</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="totalcost">Total Cost</string>
+    <string name="price">36</string>
+    <string name="review_order">Review Order</string>
+    <string name="show"> <u>Show all</u>.</string>
+    <string name="placeorder">Place order</string>
+
+</resources>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:cropToPadding="true"
+            android:src="@drawable/mainlv" />
+
+        <TextView
+            android:id="@+id/fullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_arrow_back_24"
+            android:drawableTint="@color/white"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:drawableStart="@drawable/ic_baseline_file_upload_24"
+            android:drawableTint="@color/white"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:drawableStart="@drawable/ic_baseline_info_24"
+            android:drawableTint="@color/white"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_width="330dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/layout1"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="-50dp"
+        android:background="@color/white"
+        android:elevation="3dp"
+        tools:ignore="NotSibling">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="12dp"
+            android:text="@string/app_name"
+            android:textColor="@color/navyvlue"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/timmingmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text"
+            android:layout_centerHorizontal="true"
+            android:drawableStart="@drawable/ic_baseline_star_border_24"
+            android:drawablePadding="5dp"
+            android:padding="6dp"
+            android:text="@string/timingmessage" />
+
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timmingmsg"
+            android:layout_centerHorizontal="true"
+            android:drawableStart="@drawable/ic_baseline_call_24"
+            android:drawablePadding="5dp"
+            android:text="@string/contact" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contact"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/navyvlue"
+            android:padding="8dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/bookatable"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout2"
+        android:layout_marginBottom="50dp">
+
+        <TextView
+            android:id="@+id/maintittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Starter"
+            android:padding="8dp"
+            android:textColor="@color/navyvlue"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/maintittle"
+            android:layout_marginTop="10dp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_corner2"
+        android:drawableStart="@drawable/ic_baseline_local_dining_24"
+        android:drawablePadding="4dp"
+        android:padding="6dp"
+        android:text="@string/menu" />
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/navyvlue">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="8dp"
+            android:drawableStart="@drawable/ic_baseline_shopping_cart_24"
+            android:drawableTint="@color/white"
+            android:text="@string/viewcart"
+            android:id="@+id/itemcount"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

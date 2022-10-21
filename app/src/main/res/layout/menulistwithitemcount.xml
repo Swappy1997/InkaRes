@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_border"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/starter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/starter" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:padding="8dp"
+        android:id="@+id/count1"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/maincourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/starter"
+        android:padding="8dp"
+        android:text="@string/main_course" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:id="@+id/count2"
+        android:layout_below="@id/count1"
+        android:padding="8dp"
+        android:layout_alignParentEnd="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maincourse"
+        android:padding="8dp"
+        android:id="@+id/dessert"
+        android:text="@string/dessert"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:padding="8dp"
+        android:id="@+id/count3"
+        android:layout_below="@+id/count2"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/drinks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dessert"
+        android:padding="8dp"
+        android:text="@string/drinks" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:id="@+id/count4"
+        android:padding="8dp"
+        android:layout_below="@id/count3"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>

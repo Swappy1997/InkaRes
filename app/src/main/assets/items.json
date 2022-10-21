@@ -1,0 +1,166 @@
+{
+  "menu": [
+    {
+      "Drinks": [
+        {
+          "name": "Safed Tamatar aur Tulsi ",
+          "price": 150,
+          "description": "hthhh gggggggggg ggggggg",
+          "quantity": 1
+        },
+        {
+          "name": "Dum Murg",
+          "price": 168,
+          "description": "ffffffffffffff",
+          "quantity": 1
+
+        },
+        {
+          "name": "Murg Zaffrani",
+          "price": 168,
+          "description": "cmdlcelnlk nfnkjnk",
+          "quantity": 1
+        },
+        {
+          "name": "Tomato Dhania",
+          "price": 150,
+          "description": "kckedkek nkekjke ce",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "Starters": [
+        {
+          "name": "Achari Paneer tikka",
+          "price": 347,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Paneer Tikka",
+          "price": 347,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Murg Tikka",
+          "price": 393,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Tandoori Murg (Half)",
+          "price": 410,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Tandoori Murg (Full)",
+          "price": 851,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Macchi Tikka",
+          "price": 626,
+          "description": "",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "Main Course": [
+        {
+          "name": "Jeera Aloo",
+          "price": 275,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Paneer Tikka Masala",
+          "price": 392,
+          "description": "",
+          "quantity": 1
+
+        },
+        {
+          "name": "Palak Paneer",
+          "price": 370,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Murg Kadhai",
+          "price": 428,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Murg Tikka Masala",
+          "price": 428,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Palak Gosht",
+          "price": 455,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Macchi Kadhai",
+          "price": 545,
+          "description": "",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "Dessert": [
+        {
+          "name": "Ice Cream",
+          "price": 200,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Gulab jamun",
+          "price": 392,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Ras gulla",
+          "price": 370,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Chocis",
+          "price": 428,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Dessert special",
+          "price": 428,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "Barfi",
+          "price": 455,
+          "description": "",
+          "quantity": 1
+        },
+        {
+          "name": "kaju katli",
+          "price": 545,
+          "description": "",
+          "quantity": 1
+        }
+      ]
+    }
+    ]
+}

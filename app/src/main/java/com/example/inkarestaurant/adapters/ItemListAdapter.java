@@ -32,12 +32,22 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
     int lastcountervalue, number;
     private ViewCartCount viewCartCount;
     int key = 1;
+    private int limit = 2;
+
 
     public ItemListAdapter(ArrayList<Items> items, Context mcontext, ViewCartCount viewCartCount, int key) {
         this.mContext = mcontext;
         this.items = items;
         this.viewCartCount = viewCartCount;
         this.key = key;
+        this.limit=items.size();
+    }
+    public ItemListAdapter(ArrayList<Items> items, Context mcontext, ViewCartCount viewCartCount, int key,int limit) {
+        this.mContext = mcontext;
+        this.items = items;
+        this.viewCartCount = viewCartCount;
+        this.key = key;
+        this.limit=limit;
     }
 
 
@@ -156,7 +166,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return limit;
     }
 
     public class ItemListViewHolder extends RecyclerView.ViewHolder {

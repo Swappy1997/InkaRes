@@ -28,7 +28,7 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
     //    ArrayList<Items> items;
     ArrayList<Items> itemsCartList;
     Items items2;
-    TextView totalCost, showall,back;
+    TextView totalCost, showall, back;
     Context mcontext;
     int totatItemInCart = 0;
 
@@ -51,7 +51,7 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(mcontext,MainActivity.class);
+                Intent intent = new Intent(mcontext, MainActivity.class);
                 intent.putExtra("items", itemsCartList);
                 startActivity(intent);
             }
@@ -64,21 +64,24 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
         itemList.setHasFixedSize(true);
         itemList.setLayoutManager(new LinearLayoutManager(mcontext));
         itemsCartList = (ArrayList<Items>) getIntent().getSerializableExtra("items");
-        ItemListAdapter itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1);
-        itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
-
+        ItemListAdapter itemListAdapter;
         if (itemsCartList.size() <= 2) {
+            itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1, 2);
+            itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
             itemList.setAdapter(itemListAdapter);
             itemListAdapter.notifyDataSetChanged();
         } else if (itemsCartList.size() > 2) {
-
+            itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1, 2);
+            itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
             itemList.setAdapter(itemListAdapter);
             itemListAdapter.notifyDataSetChanged();
-
             showall.setOnClickListener(new View.OnClickListener() {
+                ViewCartCount viewCartCount;
+
                 @Override
                 public void onClick(View view) {
-
+                    ItemListAdapter itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, viewCartCount, 1);
+                    itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
                     itemList.setAdapter(itemListAdapter);
                     itemListAdapter.notifyDataSetChanged();
                 }
@@ -108,12 +111,14 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
 //        }
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent intent=new Intent(mcontext,MainActivity.class);
-        intent.putExtra("items", itemsCartList);
-        intent.putExtra("key", 1);
-        startActivity(intent);    }
+//    @Override
+//    public void onBackPressed() {
+//        Intent intent=new Intent(mcontext,MainActivity.class);
+//        intent.putExtra("items", itemsCartList);
+//        intent.putExtra("key", 1);
+//        startActivity(intent);
+//    }
+
 
     @Override
     public void OnUpdateButton(Items items1) {

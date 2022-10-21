@@ -289,6 +289,7 @@ public class MainActivity extends AppCompatActivity implements ViewCartCount {
 
     @Override
     public void onRemoveButton(Items items1) {
+
         if (itemsCartList.contains(items1)) {
 
             itemsCartList.remove(items1);

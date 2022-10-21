@@ -31,7 +31,7 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
     TextView totalCost, showall, back;
     Context mcontext;
     int totatItemInCart = 0;
-
+    ViewCartCount viewCartCount = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,14 +76,14 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
             itemList.setAdapter(itemListAdapter);
             itemListAdapter.notifyDataSetChanged();
             showall.setOnClickListener(new View.OnClickListener() {
-                ViewCartCount viewCartCount;
-
                 @Override
                 public void onClick(View view) {
                     ItemListAdapter itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, viewCartCount, 1);
                     itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
                     itemList.setAdapter(itemListAdapter);
                     itemListAdapter.notifyDataSetChanged();
+                    //show all btn
+                    showall.setVisibility(View.GONE);
                 }
             });
         }

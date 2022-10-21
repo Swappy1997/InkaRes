@@ -28,10 +28,11 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
     //    ArrayList<Items> items;
     ArrayList<Items> itemsCartList;
     Items items2;
-    TextView totalCost, showall, back;
+    TextView totalCost, showall,back;
     Context mcontext;
     int totatItemInCart = 0;
-    ViewCartCount viewCartCount = this;
+    ViewCartCount viewCartCount=this;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,7 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mcontext, MainActivity.class);
+                Intent intent=new Intent(mcontext,MainActivity.class);
                 intent.putExtra("items", itemsCartList);
                 startActivity(intent);
             }
@@ -64,17 +65,26 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
         itemList.setHasFixedSize(true);
         itemList.setLayoutManager(new LinearLayoutManager(mcontext));
         itemsCartList = (ArrayList<Items>) getIntent().getSerializableExtra("items");
-        ItemListAdapter itemListAdapter;
-        if (itemsCartList.size() <= 2) {
-            itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1, 2);
+
+        if (itemsCartList.size() == 2) {
+            ItemListAdapter itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1,2);
             itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
             itemList.setAdapter(itemListAdapter);
             itemListAdapter.notifyDataSetChanged();
-        } else if (itemsCartList.size() > 2) {
-            itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1, 2);
+        }
+        if (itemsCartList.size() == 1) {
+            ItemListAdapter itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1,1);
             itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
             itemList.setAdapter(itemListAdapter);
             itemListAdapter.notifyDataSetChanged();
+        }
+
+        else if (itemsCartList.size() > 2) {
+            ItemListAdapter itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1);
+            itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
+            itemList.setAdapter(itemListAdapter);
+            itemListAdapter.notifyDataSetChanged();
+
             showall.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -82,7 +92,6 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
                     itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
                     itemList.setAdapter(itemListAdapter);
                     itemListAdapter.notifyDataSetChanged();
-                    //show all btn
                     showall.setVisibility(View.GONE);
                 }
             });

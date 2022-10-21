@@ -32,7 +32,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
     int lastcountervalue, number;
     private ViewCartCount viewCartCount;
     int key = 1;
-    private int limit = 2;
+    private int limit = 0;
 
 
     public ItemListAdapter(ArrayList<Items> items, Context mcontext, ViewCartCount viewCartCount, int key) {
@@ -119,7 +119,6 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
                 }
             });
         } else if (key == 1) {
-
             Items display_items = items.get(position);
             holder.main_tittle.setText(display_items.getTittle());
             holder.sub_tittle.setText(display_items.getSubtittle());
@@ -128,6 +127,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
             holder.counting.setText(String.valueOf(display_items.getTotalInCart()));
             holder.countingLayout.setVisibility(View.VISIBLE);
             holder.add.setVisibility(View.GONE);
+
             holder.addition.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -147,15 +147,16 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
                     Items display_items = items.get(position);
                     int total = display_items.getTotalInCart();
                     total--;
-                    if (total > 0) {
+                    if (total >0) {
                         display_items.setTotalInCart(total);
                         viewCartCount.OnUpdateButton(display_items);
                         holder.counting.setText(total + "");
                     } else {
+                        viewCartCount.onRemoveButton(display_items);
                         holder.countingLayout.setVisibility(View.GONE);
                         holder.add.setVisibility(View.VISIBLE);
                         display_items.setTotalInCart(total);
-                        viewCartCount.onRemoveButton(display_items);
+
                     }
 
                 }

@@ -27,6 +27,7 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
     RecyclerView itemList;
     //    ArrayList<Items> items;
     ArrayList<Items> itemsCartList;
+    ArrayList<Items> itemsCartList2;
     Items items2;
     TextView totalCost, showall,back;
     Context mcontext;
@@ -43,7 +44,9 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
         totalCost = findViewById(R.id.totalcost);
         showall = findViewById(R.id.SHOW_ALL);
         back = findViewById(R.id.back);
-        setItemlist();
+
+        itemsCartList = (ArrayList<Items>) getIntent().getSerializableExtra("items");
+        setItemlist(itemsCartList);
         setBackBtn();
         calculateTotalAmount();
     }
@@ -59,12 +62,13 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
         });
     }
 
-    private void setItemlist() {
+    private void setItemlist(ArrayList<Items>arrayList) {
 
         itemList.setNestedScrollingEnabled(true);
         itemList.setHasFixedSize(true);
         itemList.setLayoutManager(new LinearLayoutManager(mcontext));
-        itemsCartList = (ArrayList<Items>) getIntent().getSerializableExtra("items");
+
+        Log.d("", "setItemlist: "+itemsCartList.size());
 
         if (itemsCartList.size() == 2) {
             ItemListAdapter itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1,2);
@@ -80,7 +84,7 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
         }
 
         else if (itemsCartList.size() > 2) {
-            ItemListAdapter itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1);
+            ItemListAdapter itemListAdapter = new ItemListAdapter(itemsCartList, mcontext, this, 1,2);
             itemList.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
             itemList.setAdapter(itemListAdapter);
             itemListAdapter.notifyDataSetChanged();
@@ -137,6 +141,7 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
             itemsCartList.add(index, items1);
             totatItemInCart = 0;
             float subtotal = 0f;
+            Log.d("TAG", "OnUpdateButton: "+itemsCartList.size());
 
             for (Items i : itemsCartList) {
                 totatItemInCart = totatItemInCart + i.getTotalInCart();
@@ -149,11 +154,12 @@ public class ViewCart extends AppCompatActivity implements ViewCartCount {
 
     @Override
     public void onRemoveButton(Items items1) {
-        if (itemsCartList.contains(items1)) {
-
-            itemsCartList.remove(items1);
+        if (itemsCartList2.contains(items1)) {
+            itemsCartList2.remove(items1);
             totatItemInCart = 0;
             float subtotal = 0f;
+            setItemlist(itemsCartList2);
+            Log.d("TAG", "OnUpdateButton: "+itemsCartList2.size());
 
             for (Items i : itemsCartList) {
                 totatItemInCart = totatItemInCart + i.getTotalInCart();

@@ -40,14 +40,15 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
         this.items = items;
         this.viewCartCount = viewCartCount;
         this.key = key;
-        this.limit=items.size();
+        this.limit = items.size();
     }
-    public ItemListAdapter(ArrayList<Items> items, Context mcontext, ViewCartCount viewCartCount, int key,int limit) {
+
+    public ItemListAdapter(ArrayList<Items> items, Context mcontext, ViewCartCount viewCartCount, int key, int limit) {
         this.mContext = mcontext;
         this.items = items;
         this.viewCartCount = viewCartCount;
         this.key = key;
-        this.limit=limit;
+        this.limit = limit;
     }
 
 
@@ -68,7 +69,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
             holder.sub_tittle.setText(display_items.getSubtittle());
             Log.d("", "onBindViewHolder: " + position);
 
-            holder.price.setText("$ "+display_items.getPrice());
+            holder.price.setText("$ " + display_items.getPrice());
 
             holder.counting.setText(String.valueOf(display_items.getQuantity()));
 
@@ -123,7 +124,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
             holder.main_tittle.setText(display_items.getTittle());
             holder.sub_tittle.setText(display_items.getSubtittle());
             Log.d("", "onBindViewHolder: " + position);
-            holder.price.setText("$ "+display_items.getPrice());
+            holder.price.setText("$ " + display_items.getPrice());
             holder.counting.setText(String.valueOf(display_items.getTotalInCart()));
             holder.countingLayout.setVisibility(View.VISIBLE);
             holder.add.setVisibility(View.GONE);
@@ -147,7 +148,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemLi
                     Items display_items = items.get(position);
                     int total = display_items.getTotalInCart();
                     total--;
-                    if (total >0) {
+                    if (total > 0) {
                         display_items.setTotalInCart(total);
                         viewCartCount.OnUpdateButton(display_items);
                         holder.counting.setText(total + "");
